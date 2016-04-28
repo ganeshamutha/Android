@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 //import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
@@ -212,10 +214,24 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.display);
         text = tv.getText();
 
-        if(text.equals("0"))
-            equation =  "0";
-        else
-            equation += "0";
+        if(text.equals("0")) {
+            equation = "0";
+        }
+        else {
+            int len = equation.length();
+            char eChar = equation.charAt(len-1);
+
+            switch(eChar)
+            {
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                    break;
+                default:
+                    equation += "0";
+            }
+        }
 
         if(checkOperator(equation))
             data2 += "0";
@@ -262,7 +278,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        data1 = String.valueOf(result);
+
+        DecimalFormat df = new DecimalFormat("0.###");
+        data1 = df.format(result);
         data2 = "";
         operation = op.no_op;
 
