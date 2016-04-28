@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import android.util.Log;
+//import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         else
             data1 += "1";
 
-        Log.v("calculix", "data1 is " + data1);
-        Log.v("calculix", "data2 is " + data2);
+        //Log.v("calculix", "data1 is " + data1);
+        //Log.v("calculix", "data2 is " + data2);
 
         tv.setText(equation);
     }
