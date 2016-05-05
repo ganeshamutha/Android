@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_linear);
     }
 
     enum op
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int compute()
     {
-        if(data1.isEmpty() || data2.isEmpty())
+        if(data1.isEmpty() || data2.isEmpty() || data2.equals(" "))
             return 1;
 
         double v1 = Double.parseDouble(data1);
